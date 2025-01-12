@@ -1,0 +1,3 @@
+- actions
+  - signIn
+    - validatedActionに、signInSchemaと非同期関数を渡す

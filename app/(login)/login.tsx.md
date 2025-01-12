@@ -1,0 +1,12 @@
+- Login
+  - searchParams
+    - useSearchParamsで、URLからパラメータを取得する
+  - redirect, priceId, inviteId
+    - searchParamsを使い、特定のパラメータの取得
+  - useActionStateを使い、stateとformActionとpendingを受け取る
+  - modeによって、htタグのテキストを切り替える
+  - formタグのactionを使い、formActionを実行する
+    - modeがsigninの際には、signinを実行する
+    - modeがsignUpの際には、signUpを実行する
+  - stateを確認して、errorが存在する場合はerrorを表示する
+  - Buttonのdisabledをpendingで管理する
