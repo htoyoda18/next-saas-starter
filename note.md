@@ -1,0 +1,24 @@
+- .env.example
+  - .env ファイル形式の例
+- .gitignore
+  - gitの管理から除外するファイル
+- LICENSE
+  - ソフトウェアのライセンスについて
+- README.md
+  - このプロジェクトのドキュメント
+- components.json
+  - UIコンポーネントの設定ファイル
+- drizzle.config.ts
+  - Drizzle ORMのマイグレーションツールであるdrizzle-kitの設定ファイル
+- middleware.ts
+  - アプリケーションのmiddlewareファイル
+- next.config.ts
+  - nextの設定ファイル
+- package.json
+  - package管理ファイル
+- pnpm-lock.yaml
+  - pnpmの依存関係ファイル
+- postcss.config.mjs
+  - PostCSSの設定ファイル
+- tsconfig.json
+  - typeScriptの設定ファイル
