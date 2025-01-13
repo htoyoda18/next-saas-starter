@@ -1,0 +1,22 @@
+- session
+  - key
+    - JWT用のsecretKey
+  - SALT_ROUNDS
+  - hashPassword
+  - comparePasswords
+    - 普通の文字列のパスワードと、ハッシュ化されたパスワードを受け取る
+    - bcryptjsのcompareで比較する
+  - SessionData
+  - signToken
+    - joseのSignJWTを使い、JWTを作成する
+  - verifyToken
+  - getSession
+  - setSession
+    - userを受け取る
+    - expiresInOneDay
+      - 現在時刻 + 1日
+    - session
+      - idとexpiresを持つオブジェクト
+    - encryptedSession
+      - signTokenを使い、JWTを受け取る
+    - cookiesのsessionに保存する

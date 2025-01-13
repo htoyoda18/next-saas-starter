@@ -1,0 +1,13 @@
+- middleware.ts
+  - ActionState
+  - ValidatedActionFunction
+  - validatedAction
+    - schemaとactionを受け取る
+    - schema.safeParseでバリデーションを実施する
+    - result.success
+      - でないなら、エラーメッセージを返す
+      - 成功したら、actionを実行する
+  - ValidatedActionWithUserFunction
+  - validatedActionWithUser
+  - ActionWithTeamFunction
+  - withTeam

@@ -1,3 +1,25 @@
 - actions
+  - logActivity
+    - teamIdがnullまたは、undefinedなら早期リターンする
+    - newActivity
+      - teamId, userId, action, ipAddressを持つオブジェクトを代入
+    - dbインスタンスを利用して、activityLogsテーブルにnewActivityをインサートする
+  - signInSchema
+    - zodで定義された、emailとpasswordを持つオブジェクト
   - signIn
     - validatedActionに、signInSchemaと非同期関数を渡す
+      - 非同期関数
+        - dataから、emailとpasswordを分割代入で取得
+        - dbインスタンスを利用して、userとteam情報を取得する
+        - userWithTeamのlengthが0なら、エラーメッセージを返す
+        - userWithTeamから、user情報とteam情報を分割代入する
+        - isPasswordValid
+          - 取得した情報と、引数で渡されたpasswordが同じかどうか比べる
+        - isPasswordValidがfalseなら、エラーを返す
+        - Promise.allを使い、setSession, logActivityを実行する
+        - redirectTo
+          - formDataからredirectを取得する
+        - redirectToがcheckoutなら
+          - priceId
+            - formDataからpriceIdを受け取る
+          - 

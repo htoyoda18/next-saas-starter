@@ -1,0 +1,8 @@
+- stripe
+  - stripe
+  - createCheckoutSession
+    - 
+  - createCustomerPortalSession
+  - handleSubscriptionChange
+  - getStripePrices
+  - getStripeProducts
