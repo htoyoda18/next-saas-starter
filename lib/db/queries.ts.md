@@ -1,0 +1,15 @@
+- queries
+  - getUser
+    - sessionCookie
+      - Cookieから、セッション情報を取得
+    - verifyTokenで、JWTの検証
+    - 検証されたデータが正しい形式か確認する
+    - expiresと現在時刻を比較して、token 期限を確認
+    - dbインスタンスを用いて、ユーザ情報を取得する
+    - 取得したユーザ情報の長さを検証
+    - ユーザ情報を返す
+  - getTeamByStripeCustomerId
+  - updateTeamSubscription
+  - getUserWithTeam
+  - getActivityLogs
+  - getTeamForUser

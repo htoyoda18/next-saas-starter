@@ -1,0 +1,2 @@
+- SignUpPage
+  - Loginコンポーネントを、signupモードで呼び出す

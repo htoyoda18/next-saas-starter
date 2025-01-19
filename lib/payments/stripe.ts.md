@@ -1,7 +1,11 @@
 - stripe
   - stripe
   - createCheckoutSession
-    - 
+    - team と priceId を受け取る
+    - getUser を実行し、user 情報を取得する
+    - user or team が null なら、sign-up へ redirect させる
+    - stripe に Session を作成する
+    - stripe の session_url に redirect する
   - createCustomerPortalSession
   - handleSubscriptionChange
   - getStripePrices

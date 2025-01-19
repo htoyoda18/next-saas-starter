@@ -3,6 +3,7 @@
     - JWT用のsecretKey
   - SALT_ROUNDS
   - hashPassword
+    - パスワードハッシュ化
   - comparePasswords
     - 普通の文字列のパスワードと、ハッシュ化されたパスワードを受け取る
     - bcryptjsのcompareで比較する
@@ -10,6 +11,7 @@
   - signToken
     - joseのSignJWTを使い、JWTを作成する
   - verifyToken
+    - JSON Web Token (JWT) の検証を行う
   - getSession
   - setSession
     - userを受け取る

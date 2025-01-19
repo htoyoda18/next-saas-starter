@@ -1,25 +1,50 @@
 - actions
   - logActivity
-    - teamIdがnullまたは、undefinedなら早期リターンする
+    - teamId が null または、undefined なら早期リターンする
     - newActivity
-      - teamId, userId, action, ipAddressを持つオブジェクトを代入
-    - dbインスタンスを利用して、activityLogsテーブルにnewActivityをインサートする
+      - teamId, userId, action, ipAddress を持つオブジェクトを代入
+    - db インスタンスを利用して、activityLogs テーブルに newActivity をインサートする
   - signInSchema
-    - zodで定義された、emailとpasswordを持つオブジェクト
+    - zod で定義された、email と password を持つオブジェクト
   - signIn
-    - validatedActionに、signInSchemaと非同期関数を渡す
+    - validatedAction に、signInSchema と非同期関数を渡す
       - 非同期関数
-        - dataから、emailとpasswordを分割代入で取得
-        - dbインスタンスを利用して、userとteam情報を取得する
-        - userWithTeamのlengthが0なら、エラーメッセージを返す
-        - userWithTeamから、user情報とteam情報を分割代入する
+        - data から、email と password を分割代入で取得
+        - db インスタンスを利用して、user と team 情報を取得する
+        - userWithTeam の length が 0 なら、エラーメッセージを返す
+        - userWithTeam から、user 情報と team 情報を分割代入する
         - isPasswordValid
-          - 取得した情報と、引数で渡されたpasswordが同じかどうか比べる
-        - isPasswordValidがfalseなら、エラーを返す
-        - Promise.allを使い、setSession, logActivityを実行する
+          - 取得した情報と、引数で渡された password が同じかどうか比べる
+        - isPasswordValid が false なら、エラーを返す
+        - Promise.all を使い、setSession, logActivity を実行する
         - redirectTo
-          - formDataからredirectを取得する
-        - redirectToがcheckoutなら
+          - formData から redirect を取得する
+        - redirectTo が checkout なら
           - priceId
-            - formDataからpriceIdを受け取る
-          - 
+            - formData から priceId を受け取る
+          - createCheckoutSession を実行する
+        - dashboard へ redirect させる
+  - signUpSchema
+    - email と password と inviteId を持つ
+  - signUp
+    - validatedAction に signUpSchema と非同期関数を渡す
+    - 非同期関数
+      - data から、email と password と inviteId を分割代入
+      - db インスタンスを用いて、users を取得する
+      - すでにユーザが存在していたら、エラーを返す
+      - hashPassword をパスワードをハッシュ化する
+      - newUser を作成する、role は owner
+      - db インスタンスを使い、ユーザ情報をインサートする
+      - インサート処理が失敗したらエラーを返す
+      -
+  - signOut
+  - updatePasswordSchema
+  - updatePassword
+  - deleteAccountSchema
+  - deleteAccount
+  - updateAccountSchema
+  - updateAccount
+  - removeTeamMemberSchema
+  - removeTeamMember
+  - inviteTeamMemberSchema
+  - inviteTeamMember
